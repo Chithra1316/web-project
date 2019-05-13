@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Input</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<link href="/css/front.css"  rel="stylesheet" type="text/css">
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+<script>   var data = [];</script>
+<script >
+ 
+  function myFunction(k)
+  {
+   
+
+  if(k == -1){
+    console.log(data)
+    var monthname = document.getElementsByName('monthname')[0].value;
+    console.log(monthname)
+     axios.post('/admin/st/attendance', {
+      vals : data,
+      month : monthname
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+else{
+  for(var p = 0;p<k.length;p++)
+  data.push(k[p].value)
+
+}}
+  </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="menu_nav">
+        <ul>
+          <li class="active"><a href="#">Attendance</a></li>
+          <li><a href="./../fee/enter">Set Expenses</a></li>
+          <li><a href="./../fee/calcFee">Set Fees</a></li>
+          <li><a href="./../monthtab/enter">Month</a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+      <div class="logo">
+        <h1><a href="index.html">LADIES HOSTEL<br />
+          <small>COLLEGE OF ENGINEERING TRIVANDRUM</small></a></h1>
+      </div>
+    </div>
+  </div>
+  <br>
+
+ 
+  <div class="content">
+    <div class="content_resize">
+        <div class="article">
+          <div class="container">  
+    <h2>Attendance for <%= user.monthname %></h2>
+  
+  
+
+    
+    <table border>
+        <tr>
+            <th>
+                    LHADMNO
+            </th>
+            <th>
+                    NAME
+            </th>  
+            <th>
+                    ATTENDANCE
+            </th>
+        </tr>
+        <% 
+        for(var i=0; i < user.verified.length; i++) {  %>
+        
+        <tr>
+          
+            <td><%= user.verified[i].lhadmno %></td> 
+            <td><%= user.verified[i].username %></td>
+            <td><input  type="text" name= "attendance" ></td>
+            <input type="text" name="monthname" hidden="hidden" value = "<%= user.monthname %>">
+           
+         
+
+
+        </tr>
+        <br>
+        
+        <% } %>
+
+    </table>
+    <td><button  type="submit" onclick="myFunction(document.getElementsByName('attendance'))">Submit</button></td>
+            
+          
+    <button type="Submit" onclick="myFunction(-1)" value= "Submit" >Submit</button> 
+
+
+
+</div>
+          <br><br><br>       
+</body>
+</html>

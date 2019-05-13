@@ -1,0 +1,25 @@
+
+{
+  "development": {
+    "username": "root",
+    "password": "Chithra@1998",
+    "database": "project",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorAliases": "false"
+  },
+  "test": {
+    "username": "root",
+    "password": "Chithra@1998",
+	"database": "project",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "Chithra@1998",
+	"database": "project",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

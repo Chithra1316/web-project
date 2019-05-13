@@ -1,0 +1,106 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="/admin/expense/enter/" >
+        <input type="text" id="Monthid" name="Monthid" placeholder="Monthid"/>
+        <input type="int" id="Electricity" name="Electricity" placeholder="Electricity"/>
+        <input type="int" id="Water" name="Water" placeholder="Water"/>
+        <input type="int" id="Mess" name="Mess" placeholder="Mess"/>
+        <input type="int" id="Rent" name="Rent" placeholder="Rent"/>
+        <input type="int" id="CCF" name="CCF" placeholder="CCF"/>
+        <br>
+        <input class="btn btn-info" type="submit" value="Submit Button"/>
+    </form>
+
+
+</body>
+</html>
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Input</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/css/front.css">
+<link href="/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>
+
+$(document).ready(function(){
+    $("#show").click(function(){
+        $("#po").toggle();
+    });
+});
+</script>
+</head>
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="menu_nav">
+        <ul>
+          <li class="active"><a href="#">Expense</a></li>
+          <li><a href="./../fee/enter">Fee</a></li>
+          <li><a href="./../attendance/enter">Attendance</a></li>
+           <li><a href="./../monthtab/enter">Month</a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+      <div class="logo">
+        <h1><a href="index.html">LADIES HOSTEL<br />
+          <small>COLLEGE OF ENGINEERING TRIVANDRUM</small></a></h1>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="content">
+    <div class="content_resize">
+      
+        <div class="article">
+         
+          <div class="container">  
+  <form id="contact" action="/admin/expense/enter/" method="post">
+    <h3>Enter Expense</h3>
+    <br>
+    <fieldset>
+      <input type="text"  name="Monthid" placeholder="Monthid" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input type="int" name="Electricity" placeholder="Electricity" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input type="int"  name="Water" placeholder="Water" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <input type="int"  name="Mess" placeholder="Mess" tabindex="4" required>
+    </fieldset>
+     <fieldset>
+      <input type="int"  name="Rent" placeholder="Rent" tabindex="4" required>
+    </fieldset>
+     <fieldset>
+      <input type="int"  name="CCF" placeholder="CCF" tabindex="4" required>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+    
+  </form>
+</div>
+
+          
+          <br><br><br>
+         
+</body>
+</html>
